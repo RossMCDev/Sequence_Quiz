@@ -1,0 +1,53 @@
+﻿@model SeQuiz.Models.Quiz
+
+<hr />
+<div id=question class="animated slideInRight">
+    @Html.DisplayFor(model => model.CurrentTask.Instruction)
+</div><hr />
+
+@Html.HiddenFor(model => model.CurrentImageset.ImageOrder)
+@Html.HiddenFor(model => model.TaskCount)
+
+
+
+
+<button id=startButton style="display:none">
+</button>
+<button id=nextButton class="btn btn-info">@Html.DisplayFor(model => model.Finish)</button>
+<br>
+<br>
+<div class="container">
+    <div class="row" id=answerpane>
+        <div class="col-md-3 col-sm-3">
+            <div id="dragzone" class="dragzones">
+                <img id="drag" src="../Images/@Html.DisplayFor(model => model.CurrentImageset.ImageName)1.png" draggable="true"
+                     class="images">
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+            <div id="dragzone2" class="dragzones">
+                <img id="drag2" src="../Images/@Html.DisplayFor(model => model.CurrentImageset.ImageName)2.png" draggable="true"
+                     class="images">
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+            <div id="dragzone3" class="dragzones">
+                <img id="drag3" src="../Images/@Html.DisplayFor(model => model.CurrentImageset.ImageName)3.png" draggable="true"
+                     class="images">
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+            <div id="dragzone4" class="dragzones">
+                <img id="drag4" src="../Images/@Html.DisplayFor(model => model.CurrentImageset.ImageName)4.png" draggable="true" class="images">
+            </div>
+        </div>
+    </div>
+</div>
+@Html.DisplayFor(model => model.TaskCount)
+@Html.DisplayFor(model => model.ImageCount)
+@Html.DisplayFor(model => model.RemainingMinutes)
+@Html.DisplayFor(model => model.RemainingSecounds)
+
+<div id=score>
+    Score: @Html.DisplayFor(model => model.Score)
+</div>

@@ -1,0 +1,63 @@
+﻿@model SeQuiz.Models.Quiz
+
+@{
+    ViewBag.Title = "Quiz";
+}
+@section Scripts{
+    <script  src="@Url.Content("/Scripts/dragdrop.js")"></script>
+}
+
+<div id=status>Ready</div>
+<div align="center">
+    <div id=timer>
+        02:00
+    </div>
+
+
+    <div id="QuizPane">
+           <hr />
+        <div id=question>
+            @Html.DisplayFor(model => model.CurrentTask.Instruction)
+        </div><hr />
+
+        <button id=startButton class="btn btn-info">
+            Start
+        </button>
+        <button id=nextButton style="display:none">
+        </button>
+    <br>
+    <br>
+        <div class="container">
+            <div class="row" id=answerpane>
+                <div class="col-md-3 col-sm-3">
+                    <div id="dragzone" class="dragzones">
+                        <img id="drag" src="../Images/@Html.DisplayFor(model => model.CurrentImageset.ImageName)1.png" draggable="true"
+                             class="images">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <div id="dragzone2" class="dragzones">
+                        <img id="drag2" src="../Images/@Html.DisplayFor(model => model.CurrentImageset.ImageName)2.png" draggable="true"
+                             class="images">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <div id="dragzone3" class="dragzones">
+                        <img id="drag3" src="../Images/@Html.DisplayFor(model => model.CurrentImageset.ImageName)3.png" draggable="true"
+                             class="images">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <div id="dragzone4" class="dragzones">
+                        <img id="drag4" src="../Images/@Html.DisplayFor(model => model.CurrentImageset.ImageName)4.png" draggable="true" class="images">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    <br><br>
+
+    </div>
+</div>
+

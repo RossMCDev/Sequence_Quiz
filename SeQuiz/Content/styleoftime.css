@@ -1,0 +1,101 @@
+
+
+input
+{
+     padding: 8px 20px;
+   
+    
+}
+
+body {
+    text-align: center;
+	    font-family: sans-serif;
+    font-size: 17px
+}
+
+
+
+
+
+table {
+    border-collapse: collapse;
+}
+
+
+
+.btn{
+	    font-size: 46px;
+    padding: 10px 46px;
+	border-radius: 4px;
+        margin-bottom:50px;
+
+}
+
+
+#startButton{
+    margin-bottom:50px;
+    
+}
+
+#nextButton{
+    margin-bottom:50px;
+
+}
+
+
+
+#timer {
+font-family:'MV Boli';
+color:darkred;
+    font-size: 80px
+
+}
+
+canvis{
+    border-bottom: 1px solid #ddd;
+	    align-content: center;
+
+
+}
+
+
+
+
+div#answerpane .dragzones
+{
+ margin-left: -30px;
+}
+
+div#answerpane
+{
+height: 370px;
+/*visibility:hidden;*/
+
+}
+
+@media (max-width: 765 px) {
+ div#answerpane
+{
+height: auto;
+
+}
+}
+
+div#scoreboard
+{
+height: 850px;
+
+}
+ .images
+{
+        width: 150px;
+            border: 1px solid #aaaaaa;
+}
+
+div#grid .dragzones
+{
+        float: left;
+        width: 150px;
+    height: 150px;
+    border: 1px solid #aaaaaa;
+}

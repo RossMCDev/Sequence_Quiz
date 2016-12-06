@@ -1,0 +1,81 @@
+﻿
+@model SeQuiz.Models.Quiz
+
+@{
+    ViewBag.Title = "Scores";
+ }
+
+
+<div id="scoreboard">
+
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            <label>You Scored: @Html.DisplayFor(model => model.ScoreEntry.Score)</label>
+            @Html.HiddenFor(model => model.ScoreEntry.Score)
+
+        </div>
+
+        @if (Model.NewHigh)
+        {
+            using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.ScoreEntry.Score)
+
+
+                <h4>
+                    Enter your name
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                </h4>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.ScoreEntry.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ScoreEntry.Name, "", new { @class = "text-danger" })
+                </div>
+                <input type="submit" value="Enter" class="btn btn-default" />
+
+                <br>
+            }
+        }
+    </div>
+
+
+    @if (Model.LeaderBoard != null)
+    {
+        <table class="table">
+            <tr>
+                <td>
+                  <b>Score</b>  
+                </td>
+                <td>
+                    <b>Name</b>  
+                </td>
+            </tr>
+            @foreach (var entry in Model.LeaderBoard)
+            {
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => entry.Score)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => entry.Name)
+
+                    </td>
+                </tr>
+
+            }
+        </table>
+    }
+    else
+    {
+        <p class="text-danger">Error Scroreboard could not display!</p>
+    }
+    <div>
+        @Html.ActionLink("Play Again", "Index", new { }, new { @class = "btn btn-info" })
+    </div>
+
+
+</div>
+
